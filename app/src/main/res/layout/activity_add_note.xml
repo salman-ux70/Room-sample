@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/layout_bg_color"
+        android:orientation="vertical"
+        tools:context=".AddNoteActivity">
+
+        <EditText
+            android:id="@+id/etNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/et_bg"
+            android:hint="add your note"
+            android:paddingStart="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="80dp"
+
+            />
+
+        <TextView
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_bg"
+            android:text="Add"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:paddingVertical="20dp" />
+
+    </LinearLayout>
+</layout>
