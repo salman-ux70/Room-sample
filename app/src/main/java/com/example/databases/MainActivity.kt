@@ -3,6 +3,7 @@ package com.example.databases
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity(), NoteClickInterface, NoteClickDeleteInt
          val intent = Intent(this,AddNoteActivity::class.java)
           startActivity(intent)
         })
-        /*viewModal.addNotes(Notes(0,"sadasdsad"))*/
+
         val noteRVAdapter = NotesRVAdapter(this, this, this)
         binding.userList.adapter = noteRVAdapter
 
@@ -38,6 +39,8 @@ class MainActivity : AppCompatActivity(), NoteClickInterface, NoteClickDeleteInt
     }
 
     override fun onDeleteIconClick(note: Notes) {
+        viewModal.deleteNote(note)
+        Toast.makeText(this,"Note is deleted",Toast.LENGTH_SHORT).show()
 
     }
 

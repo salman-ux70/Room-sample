@@ -5,6 +5,7 @@ import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.databases.db.Notes
@@ -21,6 +22,7 @@ class NotesRVAdapter(
         // on below line we are creating an initializing all our
         // variables which we have added in layout file.
         val noteTV = itemView.findViewById<TextView>(R.id.textView)
+        val deleteIV = itemView.findViewById<ImageView>(R.id.idIVDelete)
 
     }
 
@@ -37,6 +39,16 @@ class NotesRVAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
      holder.noteTV.text = allNotes[position].note
+
+     holder.deleteIV.setOnClickListener(View.OnClickListener {
+         noteClickDeleteInterface.onDeleteIconClick(allNotes.get(position))
+     })
+
+        holder.itemView.setOnClickListener {
+            // on below line we are calling a note click interface
+            // and we are passing a position to it.
+            noteClickInterface.onNoteClick(allNotes.get(position))
+        }
     }
     fun updateList(newList:List<Notes>){
         allNotes.clear()

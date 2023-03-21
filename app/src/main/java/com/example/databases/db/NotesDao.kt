@@ -12,6 +12,6 @@ interface NotesDao {
     suspend fun insertUser(notes:Notes)
 
     @Delete
-    
+
     suspend fun deleteUser(notes:Notes)
 }
